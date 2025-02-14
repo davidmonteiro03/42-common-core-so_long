@@ -6,14 +6,14 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 18:53:48 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/10 07:57:09 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:49:37 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/so_long_bonus.h"
 
-void	so_long_born_enemy(t_list **enemies, t_map *map, \
-	char type, t_pos player)
+void	so_long_born_enemy(t_list **enemies, t_map *map, char type,
+		t_pos player)
 {
 	t_list	*node;
 	t_enemy	*enemy;
@@ -36,8 +36,8 @@ void	so_long_kill_enemies(t_list **enemies, t_map *map, t_game game)
 	{
 		temp = (t_enemy *)tmp->content;
 		map->content[temp->pos.x][temp->pos.y] = EMPTY;
-		if (ft_ptrinptrs(game.ptrs_collect, \
-			&map->content[temp->pos.x][temp->pos.y]) == true)
+		if (ft_ptrinptrs(game.ptrs_collect,
+				&map->content[temp->pos.x][temp->pos.y]) == true)
 			map->content[temp->pos.x][temp->pos.y] = COLLECT;
 		if (&map->content[temp->pos.x][temp->pos.y] == \
 			&map->content[game.exit.x][game.exit.y])
@@ -53,8 +53,8 @@ void	so_long_kill_enemy(t_list **enemies, t_game *game, t_pos pos)
 	t_list	*target;
 
 	game->map.content[pos.x][pos.y] = EMPTY;
-	if (ft_ptrinptrs(game->ptrs_collect, \
-		&game->map.content[pos.x][pos.y]) == true)
+	if (ft_ptrinptrs(game->ptrs_collect,
+			&game->map.content[pos.x][pos.y]) == true)
 		game->map.content[pos.x][pos.y] = COLLECT;
 	if (&game->map.content[pos.x][pos.y] == \
 		&game->map.content[game->exit.x][game->exit.y])
@@ -75,10 +75,10 @@ void	so_long_born_enemies(t_game *game, char *ptr)
 	if (ft_lstsize(game->static_enemies) == 3)
 	{
 		so_long_kill_enemies(&game->static_enemies, &game->map, *game);
-		so_long_born_enemy(&game->moving_enemies, &game->map, MOVING_ENEMY, \
+		so_long_born_enemy(&game->moving_enemies, &game->map, MOVING_ENEMY,
 			game->player.pos);
 	}
 	else
-		so_long_born_enemy(&game->static_enemies, &game->map, STATIC_ENEMY, \
+		so_long_born_enemy(&game->static_enemies, &game->map, STATIC_ENEMY,
 			game->player.pos);
 }

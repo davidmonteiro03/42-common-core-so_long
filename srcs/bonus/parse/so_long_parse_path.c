@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 19:39:49 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/03 19:12:32 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:52:29 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_pos	so_long_getpos(char **map, char c)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (map[++i] != NULL)
@@ -30,8 +30,7 @@ t_pos	so_long_getpos(char **map, char c)
 
 void	so_long_visit_map(t_map map, t_pos pos, int *rest, bool *end)
 {
-	if (map.content[pos.x][pos.y] == WALL || \
-		map.content[pos.x][pos.y] == VISIT)
+	if (map.content[pos.x][pos.y] == WALL || map.content[pos.x][pos.y] == VISIT)
 		return ;
 	if (pos.x < 0)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:58:23 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/08 10:17:37 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:50:12 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	so_long_fix_map_sizes(t_map *map)
 		it.y = -1;
 		while (map->content[it.x][++it.y] != '\0')
 		{
-			if (map->content[it.x][it.y] != WALL && \
-				map->content[it.x][it.y] != VISIT)
+			if (map->content[it.x][it.y] != WALL
+				&& map->content[it.x][it.y] != VISIT)
 			{
 				if (it.x < map->true_pos[START].x)
 					map->true_pos[START].x = it.x;

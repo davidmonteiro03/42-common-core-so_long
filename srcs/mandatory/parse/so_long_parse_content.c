@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:47:45 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/03 19:07:04 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:57:45 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static void	so_long_parse_walls(t_game *game)
 		j = -1;
 		while (game->map.content[i][++j] != '\0')
 		{
-			if ((i == 0 || i == game->map.height - 1 || \
-				j == 0 || j == game->map.width - 1) && \
-				game->map.content[i][j] != WALL)
+			if ((i == 0 || i == game->map.height - 1 || j == 0
+					|| j == game->map.width - 1)
+				&& game->map.content[i][j] != WALL)
 				return (so_long_exit(game, ERROR_WALLS, true, false));
 		}
 	}

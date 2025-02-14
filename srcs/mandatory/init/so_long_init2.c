@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:06:00 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 11:56:52 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:57:24 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,21 @@ void	so_long_init_img_background(t_image *image, t_mlx mlx)
 	image->width = mlx.win_width * TEXTURE_SIZE;
 	image->height = mlx.win_height * TEXTURE_SIZE;
 	image->img = mlx_new_image(mlx.mlx, image->width, image->height);
-	image->addr = mlx_get_data_addr(image->img, &image->bpp, \
-		&image->size_line, &image->endian);
+	image->addr = mlx_get_data_addr(image->img, &image->bpp, &image->size_line,
+			&image->endian);
 }
 
-void	so_long_init_image(t_image *image, t_mlx mlx, \
-	char *filename, bool init)
+void	so_long_init_image(t_image *image, t_mlx mlx, char *filename, bool init)
 {
 	image->img = NULL;
 	image->bpp = 0;
 	image->endian = 0;
 	if (filename == NULL || init == false)
 		return ;
-	image->img = mlx_xpm_file_to_image(mlx.mlx, filename, \
-		&image->width, &image->height);
-	image->addr = mlx_get_data_addr(image->img, &image->bpp, \
-		&image->size_line, &image->endian);
+	image->img = mlx_xpm_file_to_image(mlx.mlx, filename, &image->width,
+			&image->height);
+	image->addr = mlx_get_data_addr(image->img, &image->bpp, &image->size_line,
+			&image->endian);
 }
 
 void	so_long_init_player(t_player *player, t_mlx mlx, t_map map, bool init)

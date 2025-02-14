@@ -6,14 +6,14 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:41:50 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/08 10:15:50 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:51:20 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/so_long_bonus.h"
 
-void	so_long_execute(t_game *game, int pos, int speed, \
-	void (*execute)(t_game *))
+void	so_long_execute(t_game *game, int pos, int speed,
+		void (*execute)(t_game *))
 {
 	if (game->sprites.elapsed_time[pos] >= 1.0 / speed)
 	{
@@ -34,8 +34,8 @@ int	so_long_render(t_game *game)
 
 void	so_long_fill_map(t_map *map, t_pos pos)
 {
-	if (map->content[pos.x][pos.y] == WALL || \
-		map->content[pos.x][pos.y] == VISIT)
+	if (map->content[pos.x][pos.y] == WALL
+		|| map->content[pos.x][pos.y] == VISIT)
 		return ;
 	if (pos.x < 0)
 		return ;
@@ -73,6 +73,7 @@ void	so_long_play(t_game *game)
 	t_map	tmp;
 
 	so_long_init_mlx(&game->mlx, game->map, true);
+	so_long_init_img_background(&game->world, game->mlx);
 	so_long_init_textures(&game->textures, game->mlx, true);
 	so_long_init_player(&game->player, game->mlx, game->map, true);
 	so_long_find_nearest_collect(game);

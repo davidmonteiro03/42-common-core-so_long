@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:09:26 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 08:22:50 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:51:00 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ static void	so_long_hit_enemy(t_game *game, t_pos pos)
 
 void	so_long_find_collect(t_map *map, t_pos pos, int *possible_collects)
 {
-	if (map->content[pos.x][pos.y] == WALL || \
-		map->content[pos.x][pos.y] == VISIT || \
-		map->content[pos.x][pos.y] == STATIC_ENEMY || \
-		map->content[pos.x][pos.y] == MOVING_ENEMY)
+	if (map->content[pos.x][pos.y] == WALL
+		|| map->content[pos.x][pos.y] == VISIT
+		|| map->content[pos.x][pos.y] == STATIC_ENEMY
+		|| map->content[pos.x][pos.y] == MOVING_ENEMY)
 		return ;
 	if (map->content[pos.x][pos.y] == COLLECT)
 		(*possible_collects)++;

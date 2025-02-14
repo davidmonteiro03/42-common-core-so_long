@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:45:06 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 17:47:27 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:48:39 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,31 @@ static void	so_long_show_map_case_a(t_game *game)
 {
 	t_pos	tmp;
 	t_pos	alt;
-	t_image	image;
 
-	so_long_init_img_background(&image, game->mlx);
 	alt.y = -1;
 	tmp.y = game->player.pos.x - game->mlx.win_height / 2 - 1;
-	while (++tmp.y < game->player.pos.x - \
-			game->mlx.win_height / 2 + game->mlx.win_height)
+	while (++tmp.y < game->player.pos.x - game->mlx.win_height / 2
+		+ game->mlx.win_height)
 	{
 		++alt.y;
 		tmp.x = -1;
 		while (++tmp.x < game->mlx.win_width)
-			so_long_put_block(game, &image, \
-				(t_pos){tmp.x, alt.y}, \
+			so_long_put_block(game, &game->world, (t_pos){tmp.x, alt.y},
 				&game->map.content[tmp.y][tmp.x]);
 	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, image.img, 0, 0);
-	so_long_free_image(&image, game->mlx);
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, game->world.img, 0,
+		0);
 }
 
 static void	so_long_show_map_case_b(t_game *game)
 {
 	t_pos	tmp;
 	t_pos	alt;
-	t_image	image;
 
-	so_long_init_img_background(&image, game->mlx);
 	alt.y = -1;
 	tmp.y = game->player.pos.x - game->mlx.win_height / 2 - 1;
-	while (++tmp.y < game->player.pos.x - \
-		game->mlx.win_height / 2 + game->mlx.win_height)
+	while (++tmp.y < game->player.pos.x - game->mlx.win_height / 2
+		+ game->mlx.win_height)
 	{
 		++alt.y;
 		tmp.x = game->map.width - game->mlx.win_width - 1;
@@ -53,49 +48,44 @@ static void	so_long_show_map_case_b(t_game *game)
 		while (++alt.x < game->mlx.win_width)
 		{
 			++tmp.x;
-			so_long_put_block(game, &image, \
-				(t_pos){alt.x, alt.y}, \
+			so_long_put_block(game, &game->world, (t_pos){alt.x, alt.y},
 				&game->map.content[tmp.y][tmp.x]);
 		}
 	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, image.img, 0, 0);
-	so_long_free_image(&image, game->mlx);
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, game->world.img, 0,
+		0);
 }
 
 static void	so_long_show_map_case_c(t_game *game)
 {
 	t_pos	tmp;
 	t_pos	alt;
-	t_image	image;
 
-	so_long_init_img_background(&image, game->mlx);
 	alt.y = -1;
 	tmp.y = game->player.pos.x - game->mlx.win_height / 2 - 1;
-	while (++tmp.y < game->player.pos.x - \
-		game->mlx.win_height / 2 + game->mlx.win_height)
+	while (++tmp.y < game->player.pos.x - game->mlx.win_height / 2
+		+ game->mlx.win_height)
 	{
 		++alt.y;
 		alt.x = -1;
 		tmp.x = game->player.pos.y - game->mlx.win_width / 2 - 1;
-		while (++tmp.x < game->player.pos.y - \
-			game->mlx.win_width / 2 + game->mlx.win_width)
+		while (++tmp.x < game->player.pos.y - game->mlx.win_width / 2
+			+ game->mlx.win_width)
 		{
 			++alt.x;
-			so_long_put_block(game, &image, \
-				(t_pos){alt.x, alt.y}, \
+			so_long_put_block(game, &game->world, (t_pos){alt.x, alt.y},
 				&game->map.content[tmp.y][tmp.x]);
 		}
 	}
-	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, image.img, 0, 0);
-	so_long_free_image(&image, game->mlx);
+	mlx_put_image_to_window(game->mlx.mlx, game->mlx.win, game->world.img, 0,
+		0);
 }
 
 void	so_long_show_map_case3(t_game *game)
 {
 	if (game->player.pos.y - game->mlx.win_width / 2 < 0)
 		so_long_show_map_case_a(game);
-	else if (game->player.pos.y + game->mlx.win_width / 2 > \
-		game->map.width - 1)
+	else if (game->player.pos.y + game->mlx.win_width / 2 > game->map.width - 1)
 		so_long_show_map_case_b(game);
 	else
 		so_long_show_map_case_c(game);

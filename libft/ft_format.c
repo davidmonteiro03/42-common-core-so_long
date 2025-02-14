@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:18:10 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/04/29 20:41:23 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:47:45 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ void	ft_format(const char *format, va_list args, int *ret)
 	if (*format == 'd' || *format == 'i')
 		return (ft_putnbr(va_arg(args, int), ret));
 	if (*format == 'u')
-		return (ft_putnbr_base(va_arg(args, unsigned int), 10, \
-			ret, NULL));
+		return (ft_putnbr_base(va_arg(args, unsigned int), 10, ret, NULL));
 	if (*format == 'x')
-		return (ft_putnbr_base(va_arg(args, unsigned int), 16, \
-			ret, &ft_tolower));
+		return (ft_putnbr_base(va_arg(args, unsigned int), 16, ret,
+				&ft_tolower));
 	if (*format == 'X')
-		return (ft_putnbr_base(va_arg(args, unsigned int), 16, \
-			ret, &ft_toupper));
+		return (ft_putnbr_base(va_arg(args, unsigned int), 16, ret,
+				&ft_toupper));
 	if (*format == '%')
 		return (ft_putchar('%', ret));
 }

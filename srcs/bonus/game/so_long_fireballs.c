@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 19:27:09 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 17:45:32 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:50:02 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	so_long_move_fireball(t_game *game, t_fireball *fireball, t_pos new)
 	if (*block[NEW] == WALL || *block[NEW] == STATIC_ENEMY)
 		return (so_long_clear_spell(game, tmp[OLD], block[OLD]));
 	if (*block[NEW] == MOVING_ENEMY)
-		return (so_long_clear_spell(game, tmp[OLD], block[OLD]), \
+		return (so_long_clear_spell(game, tmp[OLD], block[OLD]),
 			so_long_kill_enemy(&game->moving_enemies, game, tmp[NEW]));
 	*block[OLD] = EMPTY;
 	if (block[OLD] == block[EXT])

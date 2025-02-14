@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:31:46 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 17:35:46 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:49:42 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	so_long_move_enemy(t_game *game, t_enemy *enemy, t_pos new)
 	block[NEW] = &game->map.content[tmp[NEW].x][tmp[NEW].y];
 	block[EXT] = &game->map.content[game->exit.x][game->exit.y];
 	block[PLAY] = &game->map.content[game->player.pos.x][game->player.pos.y];
-	if (*block[NEW] == WALL || *block[NEW] == STATIC_ENEMY || \
-		*block[NEW] == MOVING_ENEMY)
+	if (*block[NEW] == WALL || *block[NEW] == STATIC_ENEMY
+		|| *block[NEW] == MOVING_ENEMY)
 		return ;
 	if (*block[NEW] == PLAYER)
 		so_long_lose(game, MOVING_ENEMY);
 	if (*block[NEW] == FIREBALL)
-		return (so_long_clear_spell(game, tmp[NEW], block[NEW]), \
+		return (so_long_clear_spell(game, tmp[NEW], block[NEW]),
 			so_long_kill_enemy(&game->moving_enemies, game, tmp[OLD]));
 	*block[OLD] = EMPTY;
 	if (block[OLD] == block[EXT])
@@ -42,10 +42,10 @@ void	so_long_move_enemy(t_game *game, t_enemy *enemy, t_pos new)
 
 void	so_long_move_enemies(t_game *game)
 {
-	t_list		*tmp;
-	t_pos		movpos;
-	t_enemy		*enemy;
-	int			size[2];
+	t_list	*tmp;
+	t_pos	movpos;
+	t_enemy	*enemy;
+	int		size[2];
 
 	if (game->moving_enemies == NULL)
 		return ;

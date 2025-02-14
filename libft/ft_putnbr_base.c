@@ -6,14 +6,14 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:36:36 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/04/23 11:04:08 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:49:07 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(unsigned int nbr, unsigned int base, \
-	int *ret, int (*f)(int))
+void	ft_putnbr_base(unsigned int nbr, unsigned int base, int *ret,
+		int (*f)(int))
 {
 	const char	*str_base;
 

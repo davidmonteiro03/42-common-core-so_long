@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:55:25 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/05 17:18:32 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:57:18 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,8 @@ void	so_long_init_mlx(t_mlx *mlx, t_map map, bool init)
 			mlx->win_width = tmp_x / TEXTURE_SIZE - MARGIN;
 		if ((mlx->win_height + MARGIN) * TEXTURE_SIZE > tmp_y)
 			mlx->win_height = tmp_y / TEXTURE_SIZE - MARGIN;
-		mlx->win = mlx_new_window(mlx->mlx, \
-			mlx->win_width * TEXTURE_SIZE, mlx->win_height * TEXTURE_SIZE, \
-			GAME_TITLE);
+		mlx->win = mlx_new_window(mlx->mlx, mlx->win_width * TEXTURE_SIZE,
+				mlx->win_height * TEXTURE_SIZE, GAME_TITLE);
 	}
 }
 

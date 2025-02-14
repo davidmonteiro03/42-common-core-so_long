@@ -6,13 +6,13 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 08:58:25 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/10 13:15:47 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:52:37 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/so_long_bonus.h"
 
-static void	so_long_parse_ext(t_game *game, char *arg, char	*ext)
+static void	so_long_parse_ext(t_game *game, char *arg, char *ext)
 {
 	char	*rigth_pos;
 	char	*what_pos;
@@ -21,12 +21,12 @@ static void	so_long_parse_ext(t_game *game, char *arg, char	*ext)
 	if (arg == NULL)
 		return (so_long_exit(game, EMPTY_ARGUMENT, true, false));
 	if (ft_strlen(arg) <= ft_strlen(ext))
-		return (ft_free((void **)&arg), \
-			so_long_exit(game, ARGUMENT_TO_SHORT, true, false));
+		return (ft_free((void **)&arg), so_long_exit(game, ARGUMENT_TO_SHORT,
+				true, false));
 	what_pos = ft_strnstr(arg, ext, ft_strlen(arg));
 	if (what_pos == NULL)
-		return (ft_free((void **)&arg), \
-			so_long_exit(game, WRONG_EXTENSION, true, false));
+		return (ft_free((void **)&arg), so_long_exit(game, WRONG_EXTENSION,
+				true, false));
 	rigth_pos = arg + ft_strlen(arg) - ft_strlen(ext);
 	result = ft_strcmp(what_pos, rigth_pos);
 	ft_free((void **)&arg);
@@ -42,8 +42,8 @@ static void	so_long_parse_arg(t_game *game, char *arg)
 
 	tmp = ft_split(arg, '/');
 	if (tmp == NULL || *tmp == NULL)
-		return (ft_freeptrs((void ***)&tmp), \
-			so_long_exit(game, EMPTY_ARGUMENT, true, false));
+		return (ft_freeptrs((void ***)&tmp), so_long_exit(game, EMPTY_ARGUMENT,
+				true, false));
 	head = tmp;
 	while (*tmp != NULL && *(tmp + 1) != NULL)
 		tmp++;

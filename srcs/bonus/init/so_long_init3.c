@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 09:01:41 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 14:08:35 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:52:07 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	so_long_init_img_background(t_image *image, t_mlx mlx)
 	image->width = mlx.win_width * TEXTURE_SIZE;
 	image->height = mlx.win_height * TEXTURE_SIZE;
 	image->img = mlx_new_image(mlx.mlx, image->width, image->height);
-	image->addr = mlx_get_data_addr(image->img, &image->bpp, \
-		&image->size_line, &image->endian);
+	image->addr = mlx_get_data_addr(image->img, &image->bpp, &image->size_line,
+			&image->endian);
 }
 
 void	so_long_init_time(t_time *time)

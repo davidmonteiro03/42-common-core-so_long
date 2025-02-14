@@ -6,14 +6,14 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:16:57 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 12:15:40 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:49:54 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/so_long_bonus.h"
 
-void	so_long_update_target(t_pos *target, t_player player, \
-	t_map *map, double *min_dist)
+void	so_long_update_target(t_pos *target, t_player player, t_map *map,
+		double *min_dist)
 {
 	t_pos	it;
 	t_pos	tmp;
@@ -26,8 +26,7 @@ void	so_long_update_target(t_pos *target, t_player player, \
 		it.y = -1;
 		while (map->content[it.x][++it.y] != '\0')
 		{
-			if (map->content[it.x][it.y] == COLLECT && \
-				tmp.x == 0 && tmp.y == 0)
+			if (map->content[it.x][it.y] == COLLECT && tmp.x == 0 && tmp.y == 0)
 			{
 				map->content[it.x][it.y] = EMPTY;
 				tmp = it;
@@ -56,8 +55,8 @@ void	so_long_find_nearest_collect(t_game *game)
 	len = -1;
 	while (++len < game->comp.collectible)
 		so_long_update_target(&target, game->player, &tmp, &min_dest);
-	best_frame = so_long_get_best_frame(game->map.content, \
-		game->player.pos, target);
+	best_frame = so_long_get_best_frame(game->map.content, game->player.pos,
+			target);
 	game->player.current = &game->player.frames[best_frame];
 	ft_freeptrs((void ***)&tmp.content);
 }

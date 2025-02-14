@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:20:45 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 11:54:01 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:56:48 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ void	so_long_draw_block(t_image *dest, t_image src, t_pos pos, bool transp)
 		tmp_block.y = -1;
 		while (++tmp_block.y < src.height)
 		{
-			tmp_ptr = (unsigned int *)(dest->addr + \
-				((tmp_block.x + pos.x * TEXTURE_SIZE) * dest->bpp / 8) + \
-				((tmp_block.y + pos.y * TEXTURE_SIZE) * dest->size_line));
-			tmp_color = *(unsigned int *)(src.addr + \
-				(tmp_block.x * src.bpp / 8) + \
-				(tmp_block.y * src.size_line));
+			tmp_ptr = (unsigned int *)(dest->addr + ((tmp_block.x + pos.x
+							* TEXTURE_SIZE) * dest->bpp / 8) + ((tmp_block.y
+							+ pos.y * TEXTURE_SIZE) * dest->size_line));
+			tmp_color = *(unsigned int *)(src.addr + (tmp_block.x * src.bpp / 8)
+					+ (tmp_block.y * src.size_line));
 			if (ft_istransp(tmp_color) && transp == true)
 				continue ;
 			*tmp_ptr = tmp_color;

@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 08:51:50 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 14:03:50 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:51:35 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ void	so_long_update_time(t_time *time, double *elapsed_time)
 	if (time->start.tv_sec == 0 && time->start.tv_usec == 0)
 		gettimeofday(&time->start, NULL);
 	gettimeofday(&time->end, NULL);
-	*elapsed_time = (time->end.tv_sec - time->start.tv_sec) + \
-		((time->end.tv_usec - time->start.tv_usec) / 1000000.0);
+	*elapsed_time = (time->end.tv_sec - time->start.tv_sec)
+		+ ((time->end.tv_usec - time->start.tv_usec) / 1000000.0);
 }
 
 void	so_long_update_times(t_game *game)
 {
-	so_long_update_time(&game->sprites.time[FRM], \
+	so_long_update_time(&game->sprites.time[FRM],
 		&game->sprites.elapsed_time[FRM]);
-	so_long_update_time(&game->sprites.time[ENE], \
+	so_long_update_time(&game->sprites.time[ENE],
 		&game->sprites.elapsed_time[ENE]);
-	so_long_update_time(&game->sprites.time[SPL], \
+	so_long_update_time(&game->sprites.time[SPL],
 		&game->sprites.elapsed_time[SPL]);
 }

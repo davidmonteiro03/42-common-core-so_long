@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:12:36 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/07 16:35:28 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:48:26 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	so_long_free(t_game *game)
 {
 	if (game == NULL)
 		return ;
+	so_long_free_image(&game->world, game->mlx);
 	so_long_free_textures(&game->textures, game->mlx);
 	so_long_free_player(&game->player, game->mlx);
 	so_long_free_mlx(&game->mlx);

@@ -6,7 +6,7 @@
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:41:50 by dcaetano          #+#    #+#             */
-/*   Updated: 2024/05/03 19:18:37 by dcaetano         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:57:12 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	so_long_render(t_game *game)
 void	so_long_play(t_game *game)
 {
 	so_long_init_mlx(&game->mlx, game->map, true);
+	so_long_init_img_background(&game->world, game->mlx);
 	so_long_init_textures(&game->textures, game->mlx, true);
 	so_long_init_player(&game->player, game->mlx, game->map, true);
 	so_long_find_nearest_collect(game);
