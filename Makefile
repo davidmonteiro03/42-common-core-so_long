@@ -103,7 +103,7 @@ SLSRCS_B  = ./srcs/bonus/errors/so_long_error.c \
             ./srcs/bonus/game/show_map/so_long_show_map_case1.c \
             ./srcs/bonus/game/show_map/so_long_show_map_case2.c \
             ./srcs/bonus/game/show_map/so_long_show_map_case3.c
-# **************************************************************************** #
+
 SLOBJS_B  = $(SLSRCS_B:.c=.o)
 
 # so_long executable
