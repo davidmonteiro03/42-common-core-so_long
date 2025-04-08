@@ -6,7 +6,7 @@
 #    By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 08:07:07 by dcaetano          #+#    #+#              #
-#    Updated: 2025/03/06 13:58:31 by dcaetano         ###   ########.fr        #
+#    Updated: 2025/04/08 20:00:23 by dcaetano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS    = -Wall -Wextra -Werror -O3 -g
 
 # Minilibx
 
-MLXLINK   = https://cdn.intra.42.fr/document/document/31358/minilibx-linux.tgz
+MLXLINK   = https://cdn.intra.42.fr/document/document/32345/minilibx-linux.tgz
 MLXZIP    = minilibx-linux.tgz
 MLXUNZIP  = minilibx-linux
 MLXFOLDER = mlx
