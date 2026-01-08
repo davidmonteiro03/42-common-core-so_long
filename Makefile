@@ -23,11 +23,11 @@ MV        = mv
 
 # Flags
 
-CFLAGS    = -Wall -Wextra -Werror -O3 -g
+CFLAGS    = -Wall -Wextra -Werror -Ofast -g
 
 # Minilibx
 
-MLXLINK   = https://cdn.intra.42.fr/document/document/38621/minilibx-linux.tgz
+MLXLINK   = https://cdn.intra.42.fr/document/document/40942/minilibx-linux.tgz
 MLXZIP    = minilibx-linux.tgz
 MLXUNZIP  = minilibx-linux
 MLXFOLDER = mlx
